@@ -504,39 +504,63 @@ button:active {
   .dificil-board {
     width: calc(100vw - 20px);
     height: calc(100vh - 100px);
-    max-width: calc(100vh - 100px);
+    max-width: 100%;
     margin: 0 auto;
+    align-content: center;
+    justify-content: center;
   }
 
-  /* Fácil: 8 cartas = 4x2 grid */
+  /* Fácil: 8 cartas = 4x2 grid - cartas com altura limitada */
   .facil-board {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
   /* Médio: 12 cartas = 4x3 grid */
   .medio-board {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 10px;
   }
 
   /* Difícil: 16 cartas = 4x4 grid */
   .dificil-board {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 6px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    gap: 8px;
   }
 
-  /* cartas preenchem o grid completamente */
+  /* cartas com proporção mantida e sem corte */
   .card {
     width: 100%;
     height: 100%;
-    max-width: none;
-    max-height: none;
-    aspect-ratio: auto;
-    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 2 / 3;
+    margin: 0 auto;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  /* imagens das cartas se ajustam sem corte */
+  .card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding: 4px;
+    border-radius: 12px;
+  }
+
+  /* carta de som com texto menor no mobile */
+  .sound-card {
+    font-size: 1.2rem;
+    gap: 4px;
+  }
+
+  .sound-card span {
+    font-size: 0.7rem;
   }
 
   h1 {
@@ -856,7 +880,7 @@ img {
   .dificil-board {
     width: calc(100vw - 16px);
     height: calc(100vh - 100px);
-    max-width: calc(100vh - 100px);
+    max-width: 100%;
   }
 }
 
@@ -867,7 +891,7 @@ img {
   .dificil-board {
     width: calc(100vw - 12px);
     height: calc(100vh - 100px);
-    max-width: calc(100vh - 100px);
+    max-width: 100%;
   }
 
   .facil-board {
