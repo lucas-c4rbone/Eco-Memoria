@@ -438,8 +438,8 @@ button:active {
   cursor: default;
 }
 
-/* celular */
-@media (max-width: 768px) {
+/* celular (inclui celulares em landscape) */
+@media (max-width: 900px) {
   body {
     padding-bottom: 30px;
   }
@@ -449,16 +449,17 @@ button:active {
   }
 
   #game-board {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     width: 100%;
-    max-width: 340px;
-    margin: 20px auto auto;
-    gap: 12px;
+    max-width: 100%;
+    padding: 0 6px;
+    margin: 20px auto 0;
+    gap: 10px;
   }
 
   .card {
     width: 100%;
-    max-width: 150px;
+    max-width: 100%;
     margin: auto;
   }
 
@@ -547,22 +548,24 @@ button:active {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hud-box {
-    min-width: 130px;
-    padding: 10px 16px;
+    min-width: 0;
+    padding: 10px 12px;
+    max-width: 45vw;
+    overflow: hidden;
   }
 
   .hud-value {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 
   .hud-left {
-    left: 10px;
+    left: 8px;
   }
 
   .hud-right {
-    right: 10px;
+    right: 8px;
   }
 }
 
