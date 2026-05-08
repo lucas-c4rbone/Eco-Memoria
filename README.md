@@ -10,8 +10,7 @@ Jogo educativo no **navegador**: combine **cartas de som** com **cartas de image
 </p>
 
 <p align="center">
-  <!-- Depois do deploy, substitua pelo seu link público -->
-  <a href="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/"><strong>Jogar online (demo)</strong></a>
+  <a href="https://lucas-c4rbone.github.io/Eco-Memoria/"><strong>Jogar online (demo)</strong></a>
 </p>
 
 ---
@@ -24,17 +23,13 @@ Jogo educativo no **navegador**: combine **cartas de som** com **cartas de image
 - **Responsivo**: layout adaptado ao celular; aviso para jogar em **paisagem** em telas pequenas.
 - **Pré-carregamento**: tela de loading enquanto imagens e áudios são carregados.
 
-## Pré-visualização
+## Pré-visualização (opcional)
 
-> **Dica:** depois que o site estiver no ar, tire um **print da tela do menu**, salve como `docs/preview.png` (ou na raiz) e acrescente aqui:
+Se você quiser deixar o GitHub mais “bonito”, adicione um print no projeto e coloque no README.
 
-```markdown
-<p align="center">
-  <img src="./docs/preview.png" alt="Captura do jogo Eco Memória" width="720">
-</p>
-```
-
-Isso deixa o repositório bem mais convidativo para bancas e recrutadores.
+Sugestão:
+- Salve um print em `docs/preview.png` (ou em uma pasta/pasta que você preferir).
+- Depois atualize a imagem no README para apontar para esse arquivo.
 
 ## Como rodar na sua máquina
 
@@ -42,7 +37,7 @@ Isso deixa o repositório bem mais convidativo para bancas e recrutadores.
 
 1. Clone o repositório.
 2. Abra o arquivo **`index.html`** no navegador  
-   *(dois cliques ou “Abrir com…”)**.
+   *(dois cliques ou “Abrir com…”)*.
 
 Para testar como no servidor da web (opcional):
 
@@ -96,7 +91,7 @@ Projeto desenvolvido para fins **educacionais**.
 
 ## Autor
 
-**Seu nome** — *breve linha opcional sobre você ou sobre o projeto (bolsa / curso / disciplina).* 
+**Lucas Carbone Vieira** — Projeto para bolsa/portfolio: Web Game em HTML, CSS e JavaScript.
 
 ---
 
