@@ -106,12 +106,12 @@ http://localhost:8000
 </p>
 
 <p align="center">
-  <strong>Gameplay - Modo Fácil</strong><br>
+  <strong>Gameplay - Início</strong><br>
   <img src="assets/images/game.png" width="600" alt="Gameplay modo fácil">
 </p>
 
 <p align="center">
-  <strong>Gameplay - Modo Médio</strong><br>
+  <strong>Gameplay - Finalizando</strong><br>
   <img src="assets/images/game2.png" width="600" alt="Gameplay modo médio">
 </p>
 
