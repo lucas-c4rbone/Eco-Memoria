@@ -211,12 +211,6 @@ Eco-Memoria/
 
 ---
 
-## 🎥 Demonstração em Vídeo
-
-*[Adicione aqui um link para vídeo curto demonstrando o funcionamento]*
-
----
-
 ## 📝 Licença e Créditos
 
 Este projeto foi desenvolvido **exclusivamente para fins educacionais** e avaliação do processo seletivo do INPP/MCTI.
