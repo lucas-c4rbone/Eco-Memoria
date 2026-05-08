@@ -445,7 +445,8 @@ button:active {
 }
 
 /* celular portrait - 2 colunas */
-@media (max-width: 900px) and (orientation: portrait) {
+/* celular portrait - qualquer tamanho de tela */
+@media (hover: none) and (pointer: coarse) and (orientation: portrait) {
   body { padding-bottom: 30px; }
 
   #game-screen {
@@ -471,8 +472,8 @@ button:active {
   .sound-card span { font-size: 0.9rem; }
 }
 
-/* celular landscape - 4 colunas */
-@media (max-width: 900px) and (orientation: landscape) {
+/* celular landscape - qualquer tamanho de tela */
+@media (hover: none) and (pointer: coarse) and (orientation: landscape) {
   body { padding-bottom: 30px; }
 
   #game-screen {
@@ -490,12 +491,49 @@ button:active {
   }
 
   .card { width: 100%; max-width: 100%; margin: auto; }
-  h1 { font-size: 1.8rem; padding-inline: 10px; }
-  p { font-size: 1rem; }
-  #menu { margin-top: 30px; padding-inline: 20px; }
+  p { font-size: 0.9rem; }
   .modal-content { width: 92%; min-width: unset; padding: 24px; }
   .sound-card { font-size: 1.4rem; }
   .sound-card span { font-size: 0.85rem; }
+
+  /* menu landscape: compacto, sem scroll */
+  #menu {
+    gap: 6px;
+    padding-inline: 16px;
+    justify-content: center;
+  }
+
+  #menu h1 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+  }
+
+  #menu p {
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  .menu-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .menu-buttons button {
+    flex: 1 1 120px;
+    max-width: 160px;
+    min-height: 38px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  .headphone-warning {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+    margin-top: 6px;
+  }
 }
 
 @media (hover: none) {
@@ -554,7 +592,7 @@ button:active {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
-@media (max-width: 900px) {
+@media (hover: none) and (pointer: coarse) {
   .hud-box {
     min-width: 130px;
     padding: 10px 16px;
@@ -747,7 +785,7 @@ img {
   }
 }
 
-@media (max-width: 900px) {
+@media (hover: none) and (pointer: coarse) {
   .loader-content {
     padding: 30px 24px;
     border-radius: 26px;
