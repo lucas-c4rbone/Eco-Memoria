@@ -30,7 +30,7 @@ const audioAssets = [
   "assets/sfx/click.mp3"
 ];
 
-// variáveis do jogo (deixei tudo no começo para eu achar fácil)
+// variáveis do jogo
 let score = 0;
 let matches = 0;
 let timer = null;
@@ -122,7 +122,7 @@ function playSfx(sound) {
   sound.play();
 }
 
-// muda fundo conforme nível (usei else if porque fica mais claro pra mim)
+// muda fundo conforme nível (usei else if porque fica mais claro)
 function setBodyBgForDifficulty(difficulty) {
   document.body.classList.remove("easy-bg", "medium-bg", "hard-bg");
   if (difficulty === "facil") {
