@@ -27,25 +27,24 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #d7efce;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   text-align: center;
-  overflow: hidden;
+  overflow-x: hidden;
   touch-action: manipulation;
 }
 
 /* títulos */
 h1 {
   font-family: "NATOOR", sans-serif;
-  font-size: clamp(1.5rem, 4vh, 2.5rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   color: #85b161;
   -webkit-text-stroke: 1px #4c5c37;
   text-shadow:
     0 4px 0 rgba(0, 0, 0, 0.18),
     0 8px 18px rgba(0, 0, 0, 0.22);
-  margin: 0;
-  line-height: 1.2;
+  margin-bottom: 25px;
 }
 
 /* textos normais */
@@ -136,16 +135,13 @@ button:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 14px;
+  margin-top: 25px;
 }
 
 .menu-buttons button {
   width: 100%;
-  max-width: 260px;
-  padding: 8px 16px;
-  font-size: 0.95rem;
-  min-height: 42px;
+  max-width: 280px;
 }
 
 /* modal de resultado: botões quebram linha no celular */
@@ -169,53 +165,50 @@ button:active {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.65);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
   backdrop-filter: blur(6px);
-  overflow: hidden;
 }
 
 .rules-content {
-  width: 90vw;
-  max-width: 600px;
-  max-height: 90vh;
+  width: min(90%, 700px);
+  max-height: 85vh;
   overflow-y: auto;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 35px;
+  border-radius: 28px;
   background: linear-gradient(
     180deg,
     rgba(255, 248, 232, 0.98) 0%,
     rgba(246, 237, 216, 0.96) 100%
   );
-  border: 3px solid #d7c292;
+  border: 4px solid #d7c292;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
   text-align: left;
 }
 
 .rules-content h2 {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-family: "NATOOR", sans-serif;
-  font-size: clamp(1.8rem, 4vh, 2.2rem);
+  font-size: 2.5rem;
   color: #6f8f42;
 }
 
 .rules-text p {
-  margin-bottom: 10px;
-  font-size: clamp(0.9rem, 2.5vh, 1.1rem);
-  line-height: 1.4;
+  margin-bottom: 18px;
+  font-size: 1.2rem;
+  line-height: 1.6;
   color: #3d3d3d;
 }
 
 .rules-content button {
-  margin-top: 10px;
+  margin-top: 15px;
   width: 100%;
-  min-height: 44px;
 }
 
 /* aviso retrato */
@@ -250,16 +243,13 @@ button:active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  gap: 10px;
+  min-height: 100vh;
+  gap: 15px;
   background-image: url("assets/images/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  overflow: hidden;
-  padding: 10px;
 }
 
 #menu::before {
@@ -275,35 +265,29 @@ button:active {
 }
 
 #menu p {
-  font-size: clamp(0.9rem, 2.5vh, 1.4rem);
+  font-size: 1.6rem;
   color: #4b4b4b;
   font-weight: bold;
-  margin: 0;
 }
 
 /* tela do jogo */
 #game-screen {
-  height: 100vh;
-  width: 100vw;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  padding: 20px 0;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(38, 77, 26, 0.12);
 }
 
 #info {
+  margin-top: 18px;
   font-family: "LadyNature", sans-serif;
-  font-size: clamp(0.8rem, 2vh, 1.2rem);
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
   font-weight: bold;
   color: #2f2f2f;
   text-shadow: 0 2px 6px rgba(255, 255, 255, 0.6);
-  padding-inline: 10px;
+  padding-inline: 20px;
   max-width: 900px;
-  margin: 5px auto;
-  line-height: 1.3;
-  flex-shrink: 0;
+  margin-inline: auto;
+  line-height: 1.5;
 }
 
 /* tabuleiro */
@@ -313,9 +297,6 @@ button:active {
   justify-content: center;
   margin-top: 25px;
   padding: 10px;
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
 }
 
 .facil-board {
@@ -335,26 +316,22 @@ button:active {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.65);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
-  overflow: hidden;
 }
 
 .modal-content {
   background: linear-gradient(180deg, #fff8e8 0%, #f6edd8 100%);
   border: 4px solid #d7c292;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 34px;
+  border-radius: 28px;
   text-align: center;
-  width: 90vw;
-  max-width: 400px;
-  max-height: 90vh;
-  overflow-y: auto;
+  min-width: 340px;
   box-shadow:
     0 12px 40px rgba(0, 0, 0, 0.35),
     inset 0 2px 8px rgba(255, 255, 255, 0.5);
@@ -362,9 +339,9 @@ button:active {
 
 .modal-content h2 {
   font-family: "Helvetica", sans-serif;
-  font-size: clamp(1.5rem, 4vh, 2rem);
+  font-size: 2.2rem;
   color: #85b161;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 /* cartas */
@@ -461,134 +438,56 @@ button:active {
   cursor: default;
 }
 
-/* celular (inclui celulares em landscape) */
-@media (max-width: 900px) {
+/* celular */
+@media (max-width: 768px) {
   body {
-    padding-bottom: 0;
+    padding-bottom: 30px;
   }
 
-  /* título do jogo some no mobile: o HUD já dá o contexto */
-  #game-screen > h1 {
-    display: none;
-  }
-
-  #info {
-    font-size: 0.85rem;
-    margin: 4px 0;
-    line-height: 1.2;
-    padding-inline: 8px;
-    flex-shrink: 0;
-  }
-
-  /* mobile: grid organizado sem scroll - calcula espaço disponível */
   #game-screen {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 50px 0 0 0;
-    overflow: hidden;
+    padding: 12px;
   }
 
   #game-board {
-    flex: 1;
-    display: grid;
-    padding: 0;
-    margin: 0;
-    align-content: center;
-    justify-content: center;
-  }
-
-  /* Grids organizados sem scroll - calculados por viewport */
-  .facil-board,
-  .medio-board,
-  .dificil-board {
-    width: calc(100vw - 20px);
-    height: calc(100vh - 100px);
-    max-width: 100%;
-    margin: 0 auto;
-    align-content: center;
-    justify-content: center;
-  }
-
-  /* Fácil: 8 cartas = 4x2 grid - cartas com altura limitada */
-  .facil-board {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: 100%;
+    max-width: 340px;
+    margin: 20px auto auto;
     gap: 12px;
   }
 
-  /* Médio: 12 cartas = 4x3 grid */
-  .medio-board {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  /* Difícil: 16 cartas = 4x4 grid */
-  .dificil-board {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: repeat(4, minmax(0, 1fr));
-    gap: 8px;
-  }
-
-  /* cartas com proporção mantida e sem corte */
   .card {
     width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    aspect-ratio: 2 / 3;
-    margin: 0 auto;
-    min-width: 0;
-    min-height: 0;
-  }
-
-  /* imagens das cartas se ajustam sem corte */
-  .card-back img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    padding: 4px;
-    border-radius: 12px;
-  }
-
-  /* carta de som com texto menor no mobile */
-  .sound-card {
-    font-size: 1.2rem;
-    gap: 4px;
-  }
-
-  .sound-card span {
-    font-size: 0.7rem;
+    max-width: 150px;
+    margin: auto;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     padding-inline: 10px;
-    margin-bottom: 10px;
   }
 
   p {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   #menu {
+    margin-top: 30px;
     padding-inline: 20px;
   }
 
   .modal-content {
     width: 92%;
     min-width: unset;
-    padding: 20px;
+    padding: 24px;
   }
 
   .sound-card {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .sound-card span {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -648,57 +547,43 @@ button:active {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
-@media (max-width: 900px) {
-  #hud {
-    top: 8px;
-  }
-
+@media (max-width: 768px) {
   .hud-box {
-    min-width: 0;
-    padding: 6px 10px;
-    max-width: 40vw;
-    overflow: hidden;
-    border-radius: 14px;
-    border: 2px solid #d7c292;
-  }
-
-  .hud-label {
-    font-size: 0.75rem;
-    margin-bottom: 2px;
+    min-width: 130px;
+    padding: 10px 16px;
   }
 
   .hud-value {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .hud-left {
-    left: 8px;
+    left: 10px;
   }
 
   .hud-right {
-    right: 8px;
+    right: 10px;
   }
 }
 
 .headphone-warning {
-  margin-top: 8px;
-  padding: 10px 16px;
-  max-width: 90vw;
-  max-height: 15vh;
-  border-radius: 14px;
+  margin-top: 10px;
+  padding: 14px 22px;
+  max-width: 520px;
+  border-radius: 18px;
   background: linear-gradient(
     180deg,
     rgba(255, 248, 232, 0.92) 0%,
     rgba(246, 237, 216, 0.88) 100%
   );
-  border: 2px solid #d7c292;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  border: 3px solid #d7c292;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
   backdrop-filter: blur(6px);
   font-family: "LadyNature", sans-serif;
-  font-size: clamp(0.8rem, 2vh, 1.1rem);
+  font-size: 1.35rem;
   color: #4c5c37;
   text-align: center;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 .easy-bg,
@@ -739,8 +624,6 @@ img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
 }
 
 #loading-screen::before {
@@ -757,16 +640,15 @@ img {
 .loader-content {
   position: relative;
   z-index: 2;
-  width: 90vw;
-  max-width: 480px;
-  padding: 30px;
-  border-radius: 24px;
+  width: min(92%, 520px);
+  padding: 42px;
+  border-radius: 34px;
   background: linear-gradient(
     180deg,
     rgba(255, 248, 232, 0.96) 0%,
     rgba(246, 237, 216, 0.94) 100%
   );
-  border: 3px solid #d7c292;
+  border: 4px solid #d7c292;
   box-shadow:
     0 20px 45px rgba(0, 0, 0, 0.28),
     inset 0 2px 8px rgba(255, 255, 255, 0.5);
@@ -787,26 +669,26 @@ img {
 
 .loader-content h1 {
   font-family: "NATOOR", sans-serif;
-  font-size: clamp(2rem, 6vh, 3.5rem);
+  font-size: clamp(3rem, 5vw, 4.8rem);
   color: #7ea95b;
   -webkit-text-stroke: 1px #4f6239;
   text-shadow:
     0 4px 0 rgba(0, 0, 0, 0.18),
     0 10px 22px rgba(0, 0, 0, 0.24);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   line-height: 1;
 }
 
 #loading-text {
   font-family: "LadyNature", sans-serif;
-  font-size: clamp(1rem, 3vh, 1.3rem);
+  font-size: 1.5rem;
   color: #4c5c37;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 .loading-bar {
   width: 100%;
-  height: 20px;
+  height: 24px;
   border-radius: 999px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.55);
@@ -843,9 +725,9 @@ img {
 
 #loading-percent {
   display: block;
-  margin-top: 12px;
+  margin-top: 18px;
   font-family: "Helvetica", sans-serif;
-  font-size: clamp(1rem, 2.5vh, 1.3rem);
+  font-size: 1.4rem;
   color: #4c5c37;
 }
 
@@ -860,49 +742,15 @@ img {
 
 @media (max-width: 768px) {
   .loader-content {
-    padding: 20px;
-    border-radius: 20px;
+    padding: 30px 24px;
+    border-radius: 26px;
   }
 
   .loader-content h1 {
-    font-size: clamp(1.8rem, 5vh, 2.5rem);
+    font-size: 2.6rem;
   }
 
   #loading-text {
-    font-size: clamp(0.9rem, 2.5vh, 1.1rem);
-  }
-}
-
-/* telas pequenas: ajusta gaps */
-@media (max-width: 480px) {
-  .facil-board,
-  .medio-board,
-  .dificil-board {
-    width: calc(100vw - 16px);
-    height: calc(100vh - 100px);
-    max-width: 100%;
-  }
-}
-
-/* telas muito estreitas */
-@media (max-width: 360px) {
-  .facil-board,
-  .medio-board,
-  .dificil-board {
-    width: calc(100vw - 12px);
-    height: calc(100vh - 100px);
-    max-width: 100%;
-  }
-
-  .facil-board {
-    gap: 8px;
-  }
-
-  .medio-board {
-    gap: 6px;
-  }
-
-  .dificil-board {
-    gap: 4px;
+    font-size: 1.2rem;
   }
 }
