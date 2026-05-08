@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Memória — Sons do Pantanal</title>
+  <meta
+    name="description"
+    content="Jogo da memória sonora: associe cada som ao animal do Pantanal. Três níveis, timer, pontuação e curiosidades."
+  >
+  <meta name="theme-color" content="#d7efce">
+  <meta property="og:title" content="Eco Memória — Sons do Pantanal">
+  <meta
+    property="og:description"
+    content="Jogo educativo no navegador: combine sons e imagens da fauna pantaneira."
+  >
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- aviso: celular em pé -->
+  <div id="rotate-warning">
+    <div>
+      <p>📱↩️ Vire o celular para jogar</p>
+    </div>
+  </div>
+
+  <!-- tela inicial -->
+  <div id="menu">
+    <h1>Eco Memória - Sons do Pantanal</h1>
+    <p>Associe os sons aos animais do Pantanal.</p>
+
+    <div class="menu-buttons">
+      <button type="button" onclick="startGame('facil')">Fácil</button>
+      <button type="button" onclick="startGame('medio')">Médio</button>
+      <button type="button" onclick="startGame('dificil')">Difícil</button>
+      <button type="button" onclick="openRules()">Regras e Funções</button>
+      <button type="button" onclick="enableLandscape()">Tela Cheia</button>
+    </div>
+
+    <div class="headphone-warning">
+      🎧 Recomendamos o uso de fones de ouvido para uma melhor experiência sonora
+    </div>
+  </div>
+
+  <!-- jogo -->
+  <div id="game-screen" class="hidden">
+    <h1>Jogo da Memória Sonora - Pantanal</h1>
+
+    <div id="hud">
+      <div class="hud-box hud-left">
+        <span class="hud-label">Tempo</span>
+        <span class="hud-value"><span id="timer">0</span>s</span>
+      </div>
+      <div class="hud-box hud-right">
+        <span class="hud-label">Pontuação</span>
+        <span class="hud-value"><span id="score">0</span></span>
+      </div>
+    </div>
+
+    <p id="info"></p>
+    <div id="game-board"></div>
+  </div>
+
+  <!-- resultado -->
+  <div id="result-modal" class="hidden">
+    <div class="modal-content">
+      <h2 id="result-title"></h2>
+      <p id="result-base-score"></p>
+      <p id="result-bonus"></p>
+      <p id="result-total"></p>
+      <div class="modal-buttons">
+        <button type="button" onclick="goToMenu()">Menu</button>
+        <button type="button" onclick="restartGame()">Reiniciar</button>
+        <button type="button" id="next-button" onclick="nextDifficulty()">
+          Próxima dificuldade
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- regras -->
+  <div id="rules-modal" class="hidden">
+    <div class="modal-content rules-content">
+      <h2>Como Jogar</h2>
+      <div class="rules-text">
+        <p>🎯 O objetivo é associar o som ao animal correto.</p>
+        <p>🃏 Cada animal possui uma carta de imagem e uma carta de som.</p>
+        <p>✅ Acertos: +100 pontos e +5 segundos.</p>
+        <p>❌ Erros: reduzem pontos e aplicam penalidade de tempo.</p>
+        <p>⏳ O jogo termina quando todas as combinações forem encontradas ou quando o tempo acabar.</p>
+        <p>🏆 Quanto mais rápido terminar, maior será sua pontuação final.</p>
+        <p>🎧 Recomendamos o uso de fones para uma melhor experiência sonora.</p>
+      </div>
+      <button type="button" onclick="closeRules()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- carregando -->
+  <div id="loading-screen">
+    <div class="loader-content">
+      <h1>Memória do Pantanal</h1>
+      <p id="loading-text">Preparando os sons e animais do Pantanal...</p>
+      <div class="loading-bar">
+        <div id="loading-fill"></div>
+      </div>
+      <span id="loading-percent">0%</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
