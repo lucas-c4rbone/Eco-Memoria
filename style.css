@@ -474,27 +474,65 @@ button:active {
 
 /* celular landscape - qualquer tamanho de tela */
 @media (hover: none) and (pointer: coarse) and (orientation: landscape) {
-  body { padding-bottom: 30px; }
+  body { padding-bottom: 0; overflow: hidden; }
 
   #game-screen {
-    padding: 90px 12px 20px;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #game-screen h1 {
+    font-size: 1.6rem;
+    margin: 6px 0 4px;
+    padding-inline: 10px;
+  }
+
+  #info { display: none; }
+
+  /* fácil: 4 colunas x 2 linhas */
+  .facil-board {
+    --card-h: calc((100vh - 140px - 8px) / 2);
+    --card-w: calc(var(--card-h) * 2 / 3);
+    grid-template-columns: repeat(4, var(--card-w)) !important;
+  }
+
+  /* médio: 6 colunas x 2 linhas */
+  .medio-board {
+    --card-h: calc((100vh - 140px - 8px) / 2);
+    --card-w: calc(var(--card-h) * 2 / 3);
+    grid-template-columns: repeat(6, var(--card-w)) !important;
+  }
+
+  /* difícil: 8 colunas x 2 linhas */
+  .dificil-board {
+    --card-h: calc((100vh - 140px - 8px) / 2);
+    --card-w: calc(var(--card-h) * 2 / 3);
+    grid-template-columns: repeat(8, var(--card-w)) !important;
   }
 
   #game-board {
-    grid-template-columns: repeat(4, 1fr) !important;
-    width: calc(100vw - 24px);
-    max-width: 100%;
-    margin: 16px auto 0;
-    gap: 10px;
-    padding: 0 4px;
+    width: auto;
+    margin: 80px auto 0;
+    gap: 8px;
+    padding: 0;
     box-sizing: border-box;
+    justify-content: center;
   }
 
-  .card { width: 100%; max-width: 100%; margin: auto; }
+  .card {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    margin: 0;
+  }
+
   p { font-size: 0.9rem; }
   .modal-content { width: 92%; min-width: unset; padding: 24px; }
-  .sound-card { font-size: 1.4rem; }
-  .sound-card span { font-size: 0.85rem; }
+  .sound-card { font-size: 1.2rem; }
+  .sound-card span { font-size: 0.8rem; }
 
   /* menu landscape: compacto, sem scroll */
   #menu {
